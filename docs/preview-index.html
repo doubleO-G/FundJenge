@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JENGE Static Pages Preview</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #FF5757 0%, #E64545 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+        
+        h1 {
+            color: #24190A;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+        
+        p {
+            color: #666;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        a {
+            display: block;
+            padding: 1.25rem 1.5rem;
+            background: #FF5757;
+            color: #24190A;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: all 0.3s;
+            text-align: center;
+        }
+        
+        a:hover {
+            background: #24190A;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(36, 25, 10, 0.3);
+        }
+        
+        .note {
+            margin-top: 2rem;
+            padding: 1rem;
+            background: #FFF8F0;
+            border-left: 4px solid #FF5757;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌍 JENGE Static Pages Preview</h1>
+        <p>Click the links below to view the three standalone HTML pages for GitHub Pages deployment:</p>
+        
+        <div class="links">
+            <a href="/preview/index.html" target="_blank">🏠 Home Page</a>
+            <a href="/preview/about.html" target="_blank">ℹ️ About Page</a>
+            <a href="/preview/donate.html" target="_blank">💰 Donate Page</a>
+        </div>
+        
+        <div class="note">
+            <strong>📌 Note:</strong> These are standalone HTML pages ready for GitHub Pages. Each opens in a new tab with full navigation between all pages.
+        </div>
+    </div>
+</body>
+</html>

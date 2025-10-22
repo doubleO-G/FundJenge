@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JENGE Impact Fund - Building Youth Economic Opportunities in Kenya</title>
+    <meta name="description" content="Join the WE BUILD campaign to create a KES 1.2 billion endowment fund supporting 500,000 Kenyan youth in the creative economy through solidarity-driven enterprises.">
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #FF5757;
+            --secondary-color: #24190A;
+            --text-color: #000000;
+            --accent-color: #FAAF14;
+            --light-bg: #FFFFFF;
+            --soft-bg: #FFF8F0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-color);
+            background: var(--light-bg);
+            line-height: 1.6;
+        }
+
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 1rem 2rem;
+        }
+
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            height: 40px;
+            display: block;
+        }
+        
+        .logo img {
+            height: 100%;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: var(--secondary-color);
+            font-weight: 700;
+        }
+
+        .btn-primary:hover {
+            background: var(--secondary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)),
+                        url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1600&q=80') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 2rem;
+            margin-top: 70px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+        }
+
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--secondary-color);
+        }
+
+        .progress-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 3rem;
+        }
+
+        .progress-bar {
+            height: 20px;
+            background: #e5e7eb;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 1.5rem 0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--primary-color);
+            transition: width 1s ease;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .tier-card {
+            border-top: 4px solid var(--accent-color);
+        }
+
+        .tier-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .tier-amount {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--text-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            font-family: inherit;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        footer {
+            background: var(--text-color);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo"><img src="logo.png" alt="JENGE Kulture"></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="donate.html" class="btn btn-primary">Donate Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="font-serif">WE BUILD Together</h1>
+            <p>Join 55,000 builders creating a KES 1.2 billion endowment to support 500,000 Kenyan youth in the creative economy by 2040</p>
+            <a href="donate.html" class="btn btn-primary">Become a Builder</a>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="progress-card">
+            <h3 class="font-serif" style="font-size: 1.75rem; margin-bottom: 1rem;">Campaign Progress - Milestone 1</h3>
+            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1rem;">
+                <div>
+                    <span style="font-size: 2.5rem; font-weight: 700; color: var(--secondary-color);">KES 1,520,000</span>
+                    <span style="color: #6b7280;"> of KES 20,000,000</span>
+                </div>
+                <div style="text-align: right;">
+                    <div style="font-size: 2rem; font-weight: 700; color: var(--secondary-color);">42</div>
+                    <div style="font-size: 0.875rem; color: #6b7280;">Builders</div>
+                </div>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 7.6%"></div>
+            </div>
+            <p style="text-align: center; color: #6b7280; margin-top: 1rem;">7.6% of Milestone 1 goal</p>
+        </div>
+
+        <h2 class="section-title font-serif">Why Kenya's Youth Need Your Support</h2>
+        <div class="stats-grid">
+            <div>
+                <div class="stat-value font-serif">67%</div>
+                <p>Youth Unemployment</p>
+            </div>
+            <div>
+                <div class="stat-value font-serif">703K</div>
+                <p>Jobs Needed Annually</p>
+            </div>
+            <div>
+                <div class="stat-value font-serif">5%</div>
+                <p>Creative Economy GDP</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background: var(--soft-bg);">
+        <h2 class="section-title font-serif">Choose Your Impact Pathway</h2>
+        <div class="card-grid">
+            <div class="card">
+                <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--secondary-color);">Become a Builder</h3>
+                <p style="margin-bottom: 1rem;">Make an annual commitment for 15 years to build the KES 1.2 billion endowment.</p>
+                <p style="font-weight: 600; margin-bottom: 1rem;">From KES 1,000/year</p>
+                <a href="donate.html?type=builder" class="btn btn-primary">Join the Builders</a>
+            </div>
+            <div class="card">
+                <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--secondary-color);">Fund a Program</h3>
+                <p style="margin-bottom: 1rem;">Make a one-time contribution towards a specific JENGE program.</p>
+                <p style="font-weight: 600; margin-bottom: 1rem;">Any amount</p>
+                <a href="donate.html?type=program" class="btn btn-primary">Fund a Program</a>
+            </div>
+            <div class="card">
+                <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--secondary-color);">Partner With Us</h3>
+                <p style="margin-bottom: 1rem;">Collaborate as a corporate or institutional partner.</p>
+                <p style="font-weight: 600; margin-bottom: 1rem;">Custom partnership</p>
+                <a href="donate.html?type=partner" class="btn btn-primary">Explore Partnership</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title font-serif">Builder Tiers</h2>
+        <div class="card-grid">
+            <div class="card tier-card">
+                <div class="tier-name">Palladium</div>
+                <div class="tier-amount">KES 25,000</div>
+                <p style="color: #6b7280; margin-bottom: 1rem;">per year for 15 years</p>
+                <ul style="list-style: none; margin-bottom: 1.5rem;">
+                    <li>✓ Total Impact: KES 375,000</li>
+                    <li>✓ Quarterly updates</li>
+                    <li>✓ Recognition wall</li>
+                </ul>
+                <a href="donate.html?tier=palladium" class="btn btn-primary" style="width: 100%;">Choose Palladium</a>
+            </div>
+            <div class="card tier-card">
+                <div class="tier-name">Platinum</div>
+                <div class="tier-amount">KES 20,000</div>
+                <p style="color: #6b7280; margin-bottom: 1rem;">per year for 15 years</p>
+                <ul style="list-style: none; margin-bottom: 1.5rem;">
+                    <li>✓ Total Impact: KES 300,000</li>
+                    <li>✓ Quarterly updates</li>
+                    <li>✓ Recognition wall</li>
+                </ul>
+                <a href="donate.html?tier=platinum" class="btn btn-primary" style="width: 100%;">Choose Platinum</a>
+            </div>
+            <div class="card tier-card">
+                <div class="tier-name">Gold</div>
+                <div class="tier-amount">KES 10,000</div>
+                <p style="color: #6b7280; margin-bottom: 1rem;">per year for 15 years</p>
+                <ul style="list-style: none; margin-bottom: 1.5rem;">
+                    <li>✓ Total Impact: KES 150,000</li>
+                    <li>✓ Semi-annual updates</li>
+                    <li>✓ Recognition wall</li>
+                </ul>
+                <a href="donate.html?tier=gold" class="btn btn-primary" style="width: 100%;">Choose Gold</a>
+            </div>
+            <div class="card tier-card">
+                <div class="tier-name">Diamond</div>
+                <div class="tier-amount">KES 5,000</div>
+                <p style="color: #6b7280; margin-bottom: 1rem;">per year for 15 years</p>
+                <ul style="list-style: none; margin-bottom: 1.5rem;">
+                    <li>✓ Total Impact: KES 75,000</li>
+                    <li>✓ Annual updates</li>
+                    <li>✓ Recognition wall</li>
+                </ul>
+                <a href="donate.html?tier=diamond" class="btn btn-primary" style="width: 100%;">Choose Diamond</a>
+            </div>
+            <div class="card tier-card">
+                <div class="tier-name">Silver</div>
+                <div class="tier-amount">KES 2,000</div>
+                <p style="color: #6b7280; margin-bottom: 1rem;">per year for 15 years</p>
+                <ul style="list-style: none; margin-bottom: 1.5rem;">
+                    <li>✓ Total Impact: KES 30,000</li>
+                    <li>✓ Annual updates</li>
+                    <li>✓ Recognition wall</li>
+                </ul>
+                <a href="donate.html?tier=silver" class="btn btn-primary" style="width: 100%;">Choose Silver</a>
+            </div>
+            <div class="card tier-card">
+                <div class="tier-name">Bronze</div>
+                <div class="tier-amount">KES 1,000</div>
+                <p style="color: #6b7280; margin-bottom: 1rem;">per year for 15 years</p>
+                <ul style="list-style: none; margin-bottom: 1.5rem;">
+                    <li>✓ Total Impact: KES 15,000</li>
+                    <li>✓ Annual updates</li>
+                    <li>✓ Recognition wall</li>
+                </ul>
+                <a href="donate.html?tier=bronze" class="btn btn-primary" style="width: 100%;">Choose Bronze</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background: var(--soft-bg);">
+        <h2 class="section-title font-serif">Get In Touch</h2>
+        <form class="contact-form" action="https://formspree.io/f/xdkovyej" method="POST">
+            <div class="form-group">
+                <label>Your Name</label>
+                <input type="text" name="name" required>
+            </div>
+            <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label>Inquiry Type</label>
+                <select name="inquiry_type">
+                    <option value="general">General Inquiry</option>
+                    <option value="builder">Becoming a Builder</option>
+                    <option value="partnership">Partnership</option>
+                    <option value="volunteer">Volunteering</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Message</label>
+                <textarea name="message" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 JENGE Impact Fund. Building economic opportunities for Kenyan youth.</p>
+        <p style="margin-top: 1rem;">
+            <a href="index.html" style="color: white; margin: 0 1rem;">Home</a>
+            <a href="about.html" style="color: white; margin: 0 1rem;">About</a>
+            <a href="donate.html" style="color: white; margin: 0 1rem;">Donate</a>
+        </p>
+    </footer>
+</body>
+</html>

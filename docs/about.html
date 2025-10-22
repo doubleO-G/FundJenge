@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About JENGE Impact Fund - Our Mission & The WE BUILD Campaign</title>
+    <meta name="description" content="Learn about JENGE Impact Fund's mission to support 500,000 Kenyan youth through the SESS model and our WE BUILD campaign raising KES 1.2 billion.">
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #FF5757;
+            --secondary-color: #24190A;
+            --text-color: #000000;
+            --accent-color: #FAAF14;
+            --light-bg: #FFFFFF;
+            --soft-bg: #FFF8F0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-color);
+            background: var(--light-bg);
+            line-height: 1.6;
+        }
+
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 1rem 2rem;
+        }
+
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            height: 40px;
+            display: block;
+        }
+        
+        .logo img {
+            height: 100%;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: var(--secondary-color);
+            font-weight: 700;
+        }
+
+        .btn-primary:hover {
+            background: var(--secondary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .hero-about {
+            min-height: 60vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)),
+                        url('https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?w=1600&q=80') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 2rem;
+            margin-top: 70px;
+        }
+
+        .hero-about h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+        }
+
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--secondary-color);
+        }
+
+        .content-block {
+            max-width: 800px;
+            margin: 0 auto 3rem;
+        }
+
+        .content-block p {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .sess-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .sess-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .sess-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .sess-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--secondary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .sess-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .stats-highlight {
+            background: var(--secondary-color);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .stats-highlight h3 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .stat-item {
+            padding: 1rem;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            background: var(--text-color);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-about h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo"><img src="logo.png" alt="JENGE Kulture"></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="donate.html" class="btn btn-primary">Donate Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero-about">
+        <div>
+            <h1 class="font-serif">About JENGE Impact Fund</h1>
+            <p style="font-size: 1.25rem;">Empowering Kenyan Youth Through Solidarity-Driven Enterprises</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="content-block">
+            <h2 class="section-title font-serif">Our Mission</h2>
+            <p>JENGE Impact Fund is dedicated to creating sustainable economic opportunities for Kenyan youth through solidarity-driven enterprises in the creative economy. We believe that every young person deserves the chance to build a meaningful livelihood while contributing to their community's growth.</p>
+            <p>Founded on the principles of collective action and mutual support, JENGE works to transform the landscape of youth employment in Kenya by providing access to capital, mentorship, and market opportunities through our innovative SESS model.</p>
+        </div>
+
+        <h2 class="section-title font-serif" style="text-align: center;">The SESS Model</h2>
+        <div class="sess-grid">
+            <div class="sess-card">
+                <div class="sess-icon">🤝</div>
+                <div class="sess-title">Solidarity</div>
+                <p>Building strong community networks and collective support systems that enable youth to work together towards shared prosperity.</p>
+            </div>
+            <div class="sess-card">
+                <div class="sess-icon">🏢</div>
+                <div class="sess-title">Enterprise</div>
+                <p>Creating and supporting viable businesses in the creative sector that generate sustainable income for youth entrepreneurs.</p>
+            </div>
+            <div class="sess-card">
+                <div class="sess-icon">🌱</div>
+                <div class="sess-title">Sustainability</div>
+                <p>Ensuring long-term viability through endowment funding and responsible business practices that benefit both people and planet.</p>
+            </div>
+            <div class="sess-card">
+                <div class="sess-icon">⚙️</div>
+                <div class="sess-title">Systems</div>
+                <p>Building institutional frameworks and support structures that enable scale and lasting impact across Kenya.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="stats-highlight">
+        <h3 class="font-serif">The WE BUILD Campaign</h3>
+        <div class="stats-row">
+            <div class="stat-item">
+                <div class="stat-number font-serif">KES 1.2B</div>
+                <p>Total Endowment Goal</p>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number font-serif">55,000</div>
+                <p>Builders Needed</p>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number font-serif">500,000</div>
+                <p>Youth Supported by 2040</p>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number font-serif">15 Years</div>
+                <p>Campaign Duration</p>
+            </div>
+        </div>
+    </div>
+
+    <section class="section">
+        <div class="content-block">
+            <h2 class="section-title font-serif">Why the Creative Economy?</h2>
+            <p>Kenya's creative economy represents 5% of GDP and offers immense potential for youth employment. From fashion and design to music production and digital arts, these sectors are growing rapidly but lack the systematic support needed to maximize their impact.</p>
+            <p>With 67% youth unemployment and 703,000 jobs needed annually, traditional employment models are insufficient. The creative economy offers flexibility, entrepreneurship opportunities, and the chance for youth to build businesses aligned with their passions and talents.</p>
+        </div>
+
+        <div class="content-block">
+            <h2 class="section-title font-serif">How It Works</h2>
+            <p><strong>The Endowment Model:</strong> Rather than providing one-time grants, we're building a KES 1.2 billion endowment that will generate sustainable returns to support youth enterprises in perpetuity. This ensures long-term impact beyond the initial 15-year campaign.</p>
+            <p><strong>Builder Commitments:</strong> We're mobilizing 55,000 "builders" - individuals and organizations who commit to annual contributions for 15 years. Each builder, regardless of tier, becomes part of a movement transforming youth employment in Kenya.</p>
+            <p><strong>Enterprise Support:</strong> Endowment returns fund solidarity enterprises - businesses owned and operated by youth that prioritize both profit and social impact, creating jobs while building community wealth.</p>
+        </div>
+
+        <div class="content-block">
+            <h2 class="section-title font-serif">Our Impact to Date</h2>
+            <p>Since launching the WE BUILD campaign, we've already begun transforming lives:</p>
+            <ul style="font-size: 1.125rem; line-height: 1.8; margin-left: 2rem;">
+                <li>42 builders committed to the 15-year journey</li>
+                <li>KES 1.52 million pledged towards Milestone 1</li>
+                <li>150+ youth engaged in preliminary enterprise training</li>
+                <li>3 pilot solidarity enterprises launched in Nairobi</li>
+                <li>Partnerships with 8 creative sector organizations</li>
+            </ul>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;">
+            <h2 class="section-title font-serif">Join the Movement</h2>
+            <p style="font-size: 1.25rem; margin-bottom: 2rem;">Be part of building economic opportunity for half a million Kenyan youth</p>
+            <a href="donate.html" class="btn btn-primary" style="font-size: 1.125rem; padding: 1rem 2rem;">Become a Builder Today</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 JENGE Impact Fund. Building economic opportunities for Kenyan youth.</p>
+        <p style="margin-top: 1rem;">
+            <a href="index.html" style="color: white; margin: 0 1rem;">Home</a>
+            <a href="about.html" style="color: white; margin: 0 1rem;">About</a>
+            <a href="donate.html" style="color: white; margin: 0 1rem;">Donate</a>
+        </p>
+    </footer>
+</body>
+</html>
