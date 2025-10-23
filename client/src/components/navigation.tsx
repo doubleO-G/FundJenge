@@ -31,8 +31,8 @@ export function Navigation() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         isScrolled
-          ? "bg-background/95 backdrop-blur-md border-b shadow-sm"
-          : "bg-transparent"
+          ? "bg-[hsl(145,40%,75%)]/95 dark:bg-[hsl(145,40%,25%)]/95 backdrop-blur-md border-b shadow-sm"
+          : "bg-[hsl(145,40%,75%)] dark:bg-[hsl(145,40%,25%)]"
       )}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -59,9 +59,7 @@ export function Navigation() {
                   "text-sm font-medium transition-colors hover:text-primary",
                   location === link.href
                     ? "text-primary"
-                    : isScrolled
-                    ? "text-foreground"
-                    : "text-white dark:text-foreground"
+                    : "text-foreground"
                 )} 
                 data-testid={`link-${link.label.toLowerCase()}`}
               >
@@ -85,9 +83,7 @@ export function Navigation() {
               variant="ghost"
               size="icon"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className={cn(
-                isScrolled ? "text-foreground" : "text-white dark:text-foreground"
-              )}
+              className="text-foreground"
               data-testid="button-mobile-menu"
             >
               {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -97,7 +93,7 @@ export function Navigation() {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden py-4 border-t bg-background">
+          <div className="md:hidden py-4 border-t bg-[hsl(145,40%,70%)] dark:bg-[hsl(145,40%,20%)]">
             <div className="flex flex-col space-y-3">
               {navLinks.map((link) => (
                 <Link 
