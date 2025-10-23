@@ -97,7 +97,8 @@ export default function Donate() {
             return;
           }
 
-          const handler = PaystackPop.setup({
+          const handler = new PaystackPop();
+          handler.newTransaction({
             key: import.meta.env.VITE_PAYSTACK_PUBLIC_KEY || 'pk_test_xxxxx',
             email: data.donorEmail,
             amount: data.amount * 100,
@@ -125,7 +126,7 @@ export default function Donate() {
             onClose: function() {
               reject(new Error("Payment cancelled"));
             },
-            callback: function(response: any) {
+            onSuccess: function(response: any) {
               resolve(response);
               toast({
                 title: "Payment Successful!",
@@ -133,8 +134,6 @@ export default function Donate() {
               });
             },
           });
-
-          handler.openIframe();
         };
 
         const loadPaystackScript = () => {
