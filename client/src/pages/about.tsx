@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { BuilderTierCard } from "@/components/builder-tier-card";
 import { ArrowRight, Target, Users, Heart, Zap } from "lucide-react";
+import youthEntrepreneurs from "@assets/stock_images/kenyan_young_entrepr_923deee8.jpg";
 
 export default function About() {
   const builderTierStats = [
@@ -53,8 +54,8 @@ export default function About() {
 
             <div className="relative">
               <img
-                src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=800&q=80"
-                alt="Youth collaboration"
+                src={youthEntrepreneurs}
+                alt="Kenyan youth entrepreneurs working together"
                 className="rounded-lg shadow-lg"
               />
             </div>

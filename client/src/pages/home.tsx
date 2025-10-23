@@ -11,6 +11,12 @@ import { ContactForm } from "@/components/contact-form";
 import { ArrowRight, Target, Users, Sparkles, TrendingUp } from "lucide-react";
 import { useCampaignStats } from "@/hooks/use-campaign-stats";
 import { useToast } from "@/hooks/use-toast";
+import creativePractitionersImg from "@assets/jenge-creative-practitioners.png";
+import freelancersImg from "@assets/jenge-freelancers.png";
+import collectiveImg from "@assets/jenge-collective.png";
+import youthWorkspace1 from "@assets/stock_images/african_youth_workin_b645948b.jpg";
+import youthWorkspace2 from "@assets/stock_images/african_youth_workin_52b03b68.jpg";
+import youthCollaboration from "@assets/stock_images/kenyan_young_entrepr_e258f0ae.jpg";
 
 export default function Home() {
   const [location] = useLocation();
@@ -53,7 +59,7 @@ export default function Home() {
     {
       title: "Become a Builder",
       description: "Join our long-term campaign by making an annual pledge for 15 years to help build the KES 1.2 billion endowment.",
-      imageUrl: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80",
+      imageUrl: creativePractitionersImg,
       commitment: {
         minimumContribution: "KES 1,000/year",
         timeCommitment: "15 Years",
@@ -70,7 +76,7 @@ export default function Home() {
     {
       title: "Fund a Program",
       description: "Make a one-time contribution towards a specific program implemented by JENGE Kulture.",
-      imageUrl: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80",
+      imageUrl: youthCollaboration,
       commitment: {
         minimumContribution: "No minimum",
         timeCommitment: "One-time",
@@ -86,7 +92,7 @@ export default function Home() {
     {
       title: "Partner With Us",
       description: "Collaborate with us as a corporate or institutional partner in support of the JENGE Impact Fund.",
-      imageUrl: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80",
+      imageUrl: collectiveImg,
       commitment: {
         minimumContribution: "Custom",
         timeCommitment: "Flexible",
@@ -105,17 +111,17 @@ export default function Home() {
     {
       title: "Nairobi Creative Collective: 50 Artists Find Sustainable Income",
       excerpt: "Through solidarity-driven support, this collective of young artists in Nairobi secured workshop space, equipment, and market access, leading to sustainable livelihoods for all members.",
-      imageUrl: "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=800&q=80",
+      imageUrl: freelancersImg,
     },
     {
       title: "Youth Cooperative Transforms Kisumu's Fashion Scene",
       excerpt: "Twenty young fashion designers pooled resources to create a shared production facility, reducing costs and increasing market reach. They now export to three countries.",
-      imageUrl: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
+      imageUrl: youthWorkspace1,
     },
     {
       title: "Digital Creators Hub Supports 100+ Young Professionals",
       excerpt: "A solidarity enterprise in Mombasa provides shared resources, training, and collaborative opportunities for young digital creators, videographers, and content producers.",
-      imageUrl: "https://images.unsplash.com/photo-1557425493-6f90ae4659fc?w=800&q=80",
+      imageUrl: youthWorkspace2,
     },
   ];
 
