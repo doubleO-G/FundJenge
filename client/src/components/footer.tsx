@@ -2,6 +2,7 @@ import { Link } from "wouter";
 import { Facebook, Twitter, Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import logoImage from "@assets/JK-Logo-Dark-1536x614_1761228357506.png";
 
 export function Footer() {
   const handleNewsletterSubmit = (e: React.FormEvent) => {
@@ -15,11 +16,8 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* About Section */}
           <div>
-            <div className="flex items-center space-x-3 mb-4">
-              <div className="flex items-center justify-center w-10 h-10 rounded-md bg-primary text-primary-foreground font-bold text-xl">
-                J
-              </div>
-              <span className="font-serif font-bold text-lg">JENGE Impact Fund</span>
+            <div className="mb-4">
+              <img src={logoImage} alt="JENGE Kulture" className="h-10 w-auto" />
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
               Building a KES 1.2 billion endowment fund to support 500,000 Kenyan youth achieve sustainable income through solidarity-driven enterprises.
@@ -45,18 +43,18 @@ export function Footer() {
             <h3 className="font-semibold text-base mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/">
-                  <a className="text-sm text-muted-foreground hover:text-primary transition-colors" data-testid="link-footer-home">Home</a>
+                <Link href="/" className="text-sm text-muted-foreground hover:text-primary transition-colors" data-testid="link-footer-home">
+                  Home
                 </Link>
               </li>
               <li>
-                <Link href="/about">
-                  <a className="text-sm text-muted-foreground hover:text-primary transition-colors" data-testid="link-footer-about">About Us</a>
+                <Link href="/about" className="text-sm text-muted-foreground hover:text-primary transition-colors" data-testid="link-footer-about">
+                  About Us
                 </Link>
               </li>
               <li>
-                <Link href="/donate">
-                  <a className="text-sm text-muted-foreground hover:text-primary transition-colors" data-testid="link-footer-donate">Donate</a>
+                <Link href="/donate" className="text-sm text-muted-foreground hover:text-primary transition-colors" data-testid="link-footer-donate">
+                  Donate
                 </Link>
               </li>
               <li>

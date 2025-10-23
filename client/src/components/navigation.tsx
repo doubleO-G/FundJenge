@@ -4,6 +4,7 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { cn } from "@/lib/utils";
+import logoImage from "@assets/JK-Logo-Dark-1536x614_1761228357506.png";
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -37,16 +38,15 @@ export function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3">
-            <div className="flex items-center justify-center w-10 h-10 rounded-md bg-primary text-primary-foreground font-bold text-xl">
-              J
-            </div>
-            <span className={cn(
-              "font-serif font-bold text-xl transition-colors",
-              isScrolled ? "text-foreground" : "text-white dark:text-foreground"
-            )}>
-              JENGE Impact Fund
-            </span>
+          <Link href="/" className="flex items-center">
+            <img 
+              src={logoImage} 
+              alt="JENGE Kulture" 
+              className={cn(
+                "h-8 w-auto transition-opacity",
+                isScrolled ? "opacity-100" : "opacity-90"
+              )}
+            />
           </Link>
 
           {/* Desktop Navigation */}
