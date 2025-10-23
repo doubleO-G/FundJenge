@@ -12,31 +12,25 @@ import Donate from "@/pages/donate";
 import NotFound from "@/pages/not-found";
 import { useHashLocation } from "@/lib/use-hash-location";
 
-function Router() {
-  return (
-    <WouterRouter hook={useHashLocation}>
-      <Switch>
-        <Route path="/" component={Home} />
-        <Route path="/about" component={About} />
-        <Route path="/donate" component={Donate} />
-        <Route component={NotFound} />
-      </Switch>
-    </WouterRouter>
-  );
-}
-
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider defaultTheme="light">
         <TooltipProvider>
-          <div className="min-h-screen flex flex-col">
-            <Navigation />
-            <main className="flex-1">
-              <Router />
-            </main>
-            <Footer />
-          </div>
+          <WouterRouter hook={useHashLocation}>
+            <div className="min-h-screen flex flex-col">
+              <Navigation />
+              <main className="flex-1">
+                <Switch>
+                  <Route path="/" component={Home} />
+                  <Route path="/about" component={About} />
+                  <Route path="/donate" component={Donate} />
+                  <Route component={NotFound} />
+                </Switch>
+              </main>
+              <Footer />
+            </div>
+          </WouterRouter>
           <Toaster />
         </TooltipProvider>
       </ThemeProvider>
