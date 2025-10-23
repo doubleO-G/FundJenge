@@ -1,0 +1,23 @@
+[
+  {
+    "id": "1",
+    "name": "Amani Collective",
+    "category": "Fashion & Design",
+    "impact": "Employing 150 artisans in Nairobi, creating sustainable fashion with traditional African prints",
+    "quote": "JENGE's support helped us scale from a small workshop to a thriving enterprise, now exporting to 15 countries."
+  },
+  {
+    "id": "2",
+    "name": "Sounds of Kenya",
+    "category": "Music Production",
+    "impact": "Supporting 30 emerging musicians with studio access and mentorship",
+    "quote": "The WE BUILD campaign gave us the foundation to build a state-of-the-art recording studio accessible to young talents."
+  },
+  {
+    "id": "3",
+    "name": "Digital Creatives Hub",
+    "category": "Digital Arts",
+    "impact": "Training 200+ youth in digital design, animation, and content creation annually",
+    "quote": "With JENGE's endowment, we can offer scholarships to talented youth who couldn't afford creative education."
+  }
+]
