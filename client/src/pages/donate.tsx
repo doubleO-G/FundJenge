@@ -29,6 +29,9 @@ import { apiRequest } from "@/lib/queryClient";
 import { builderTiers, type BuilderTierKey } from "@shared/schema";
 import { Loader2, Check, Info } from "lucide-react";
 import { ImpactStoryCard } from "@/components/impact-story-card";
+import collectiveImg from "@assets/jenge-collective.png";
+import youthWorkspace1 from "@assets/stock_images/african_youth_workin_b645948b.jpg";
+import youthCollaboration from "@assets/stock_images/kenyan_young_entrepr_e258f0ae.jpg";
 
 const donationSchema = z.object({
   donorName: z.string().min(2, "Name must be at least 2 characters"),
@@ -229,17 +232,17 @@ export default function Donate() {
     {
       title: "Your Support Transforms Lives",
       excerpt: "Every contribution helps young creators access resources, training, and market opportunities that lead to sustainable income.",
-      imageUrl: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=800&q=80",
+      imageUrl: youthCollaboration,
     },
     {
       title: "Building Stronger Communities",
       excerpt: "Solidarity-driven enterprises create ripple effects, strengthening entire communities through shared success.",
-      imageUrl: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80",
+      imageUrl: collectiveImg,
     },
     {
       title: "Sustainable Impact for Generations",
       excerpt: "Your endowment contribution creates lasting change that will benefit Kenya's youth for decades to come.",
-      imageUrl: "https://images.unsplash.com/photo-1529070538774-1843cb3265df?w=800&q=80",
+      imageUrl: youthWorkspace1,
     },
   ];
 

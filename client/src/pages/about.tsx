@@ -4,6 +4,9 @@ import { Card } from "@/components/ui/card";
 import { BuilderTierCard } from "@/components/builder-tier-card";
 import { ArrowRight, Target, Users, Heart, Zap } from "lucide-react";
 import youthEntrepreneurs from "@assets/stock_images/kenyan_young_entrepr_923deee8.jpg";
+import creativePractitionersImg from "@assets/jenge-creative-practitioners.png";
+import freelancersImg from "@assets/jenge-freelancers.png";
+import youthWorkspace2 from "@assets/stock_images/african_youth_workin_52b03b68.jpg";
 
 export default function About() {
   const builderTierStats = [
@@ -192,6 +195,13 @@ export default function About() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-12">
             <div>
+              <div className="mb-6">
+                <img
+                  src={creativePractitionersImg}
+                  alt="JENGE creative practitioners"
+                  className="rounded-lg shadow-lg w-full mb-6"
+                />
+              </div>
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
                 The "WE BUILD" Fundraising Strategy seeks to mobilize 55,000 "builders" to build a KES 1.2 billion endowment fund over 15 years, supporting solidarity-driven enterprises in Kenya and Africa.
               </p>
@@ -240,6 +250,11 @@ export default function About() {
                 </div>
               </Card>
 
+              <img
+                src={youthWorkspace2}
+                alt="African youth working together"
+                className="rounded-lg shadow-lg w-full mb-6"
+              />
               <Link href="/donate">
                 <Button size="lg" className="w-full" data-testid="button-become-builder">
                   Become a Builder
@@ -254,21 +269,31 @@ export default function About() {
       {/* About JENGE Kulture */}
       <section className="py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-8">
-              <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">
-                About JENGE Kulture
-              </h2>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <div className="text-center lg:text-left mb-8">
+                <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">
+                  About JENGE Kulture
+                </h2>
+              </div>
+
+              <Card className="p-8 bg-accent/30">
+                <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+                  JENGE Impact Fund is an initiative of <span className="font-semibold text-foreground">JENGE Kulture</span>, an organization dedicated to supporting solidarity-driven systems for youth empowerment in Africa.
+                </p>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  Through innovative approaches and community-centered strategies, JENGE Kulture works to unlock economic opportunities for young people, particularly in the creative economy where traditional support systems often fall short.
+                </p>
+              </Card>
             </div>
 
-            <Card className="p-8 bg-accent/30">
-              <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-                JENGE Impact Fund is an initiative of <span className="font-semibold text-foreground">JENGE Kulture</span>, an organization dedicated to supporting solidarity-driven systems for youth empowerment in Africa.
-              </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Through innovative approaches and community-centered strategies, JENGE Kulture works to unlock economic opportunities for young people, particularly in the creative economy where traditional support systems often fall short.
-              </p>
-            </Card>
+            <div className="relative">
+              <img
+                src={freelancersImg}
+                alt="JENGE freelancers and creative workers"
+                className="rounded-lg shadow-lg"
+              />
+            </div>
           </div>
         </div>
       </section>

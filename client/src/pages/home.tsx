@@ -17,6 +17,8 @@ import collectiveImg from "@assets/jenge-collective.png";
 import youthWorkspace1 from "@assets/stock_images/african_youth_workin_b645948b.jpg";
 import youthWorkspace2 from "@assets/stock_images/african_youth_workin_52b03b68.jpg";
 import youthCollaboration from "@assets/stock_images/kenyan_young_entrepr_e258f0ae.jpg";
+import youthEntrepreneurs from "@assets/stock_images/kenyan_young_entrepr_923deee8.jpg";
+import youthWorkspace3 from "@assets/stock_images/african_youth_workin_cb563ccb.jpg";
 
 export default function Home() {
   const [location] = useLocation();
@@ -132,8 +134,8 @@ export default function Home() {
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?w=1920&q=80"
-            alt="Kenyan youth collaboration"
+            src={youthEntrepreneurs}
+            alt="Kenyan youth entrepreneurs working together"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50" />
