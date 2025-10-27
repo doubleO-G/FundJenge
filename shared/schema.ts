@@ -89,38 +89,38 @@ export const builderTiers = {
   palladium: {
     name: 'Palladium Rock Builders',
     annualAmount: 25000,
-    color: 'from-gray-400 to-gray-600',
-    icon: '💎',
+    color: 'from-purple-400 to-purple-600',
+    icon: 'Palladium_1761595836748.png',
   },
   platinum: {
     name: 'Platinum Rock Builders',
     annualAmount: 20000,
-    color: 'from-gray-300 to-gray-500',
-    icon: '🏆',
+    color: 'from-cyan-400 to-cyan-600',
+    icon: 'Platinum_1761595836748.png',
   },
   gold: {
     name: 'Gold Rock Builders',
     annualAmount: 10000,
     color: 'from-yellow-400 to-yellow-600',
-    icon: '👑',
+    icon: 'Gold_1761595836750.png',
   },
   diamond: {
     name: 'Diamond Rock Builders',
     annualAmount: 5000,
     color: 'from-blue-400 to-blue-600',
-    icon: '💠',
+    icon: 'Diamond_1761595836749.png',
   },
   silver: {
     name: 'Silver Rock Builders',
     annualAmount: 2000,
-    color: 'from-gray-200 to-gray-400',
-    icon: '⭐',
+    color: 'from-gray-300 to-gray-500',
+    icon: 'Silver_1761595836747.png',
   },
   bronze: {
     name: 'Bronze Rock Builders',
     annualAmount: 1000,
     color: 'from-orange-400 to-orange-600',
-    icon: '🥉',
+    icon: 'Bronze_1761595836750.png',
   },
 } as const;
 

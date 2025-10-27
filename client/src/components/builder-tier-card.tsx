@@ -5,6 +5,12 @@ import { Badge } from "@/components/ui/badge";
 import { Check } from "lucide-react";
 import { builderTiers, type BuilderTierKey } from "@shared/schema";
 import { cn } from "@/lib/utils";
+import bronzeBadge from "@assets/Bronze_1761595836750.png";
+import silverBadge from "@assets/Silver_1761595836747.png";
+import goldBadge from "@assets/Gold_1761595836750.png";
+import diamondBadge from "@assets/Diamond_1761595836749.png";
+import platinumBadge from "@assets/Platinum_1761595836748.png";
+import palladiumBadge from "@assets/Palladium_1761595836748.png";
 
 interface BuilderTierCardProps {
   tierKey: BuilderTierKey;
@@ -13,6 +19,15 @@ interface BuilderTierCardProps {
 export function BuilderTierCard({ tierKey }: BuilderTierCardProps) {
   const tier = builderTiers[tierKey];
   const totalContribution = tier.annualAmount * 15;
+
+  const tierBadges: Record<BuilderTierKey, string> = {
+    bronze: bronzeBadge,
+    silver: silverBadge,
+    gold: goldBadge,
+    diamond: diamondBadge,
+    platinum: platinumBadge,
+    palladium: palladiumBadge,
+  };
 
   const formatCurrency = (amount: number) => {
     return new Intl.NumberFormat('en-KE', {
@@ -26,7 +41,11 @@ export function BuilderTierCard({ tierKey }: BuilderTierCardProps) {
     <Card className={cn("hover-elevate transition-all duration-300 h-full flex flex-col")}>
       <CardHeader className="space-y-3">
         <div className="flex items-center justify-between">
-          <span className="text-3xl">{tier.icon}</span>
+          <img 
+            src={tierBadges[tierKey]} 
+            alt={tier.name}
+            className="w-16 h-16"
+          />
           <Badge variant="secondary" className="text-xs">
             15 Years
           </Badge>

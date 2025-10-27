@@ -32,6 +32,12 @@ import { ImpactStoryCard } from "@/components/impact-story-card";
 import collectiveImg from "@assets/jenge-collective.png";
 import youthWorkspace1 from "@assets/stock_images/african_youth_workin_b645948b.jpg";
 import youthCollaboration from "@assets/stock_images/kenyan_young_entrepr_e258f0ae.jpg";
+import bronzeBadge from "@assets/Bronze_1761595836750.png";
+import silverBadge from "@assets/Silver_1761595836747.png";
+import goldBadge from "@assets/Gold_1761595836750.png";
+import diamondBadge from "@assets/Diamond_1761595836749.png";
+import platinumBadge from "@assets/Platinum_1761595836748.png";
+import palladiumBadge from "@assets/Palladium_1761595836748.png";
 
 const donationSchema = z.object({
   donorName: z.string().min(2, "Name must be at least 2 characters"),
@@ -220,6 +226,15 @@ export default function Donate() {
     setCustomAmount(null);
   };
 
+  const tierBadges: Record<BuilderTierKey, string> = {
+    bronze: bronzeBadge,
+    silver: silverBadge,
+    gold: goldBadge,
+    diamond: diamondBadge,
+    platinum: platinumBadge,
+    palladium: palladiumBadge,
+  };
+
   const formatCurrency = (amount: number) => {
     return new Intl.NumberFormat('en-KE', {
       style: 'currency',
@@ -328,11 +343,15 @@ export default function Donate() {
                                 key={key}
                                 type="button"
                                 variant={selectedTier === key ? 'default' : 'outline'}
-                                className="h-auto py-3 px-3 flex flex-col items-start"
+                                className="h-auto py-3 px-3 flex flex-col items-center"
                                 onClick={() => handleTierChange(key as BuilderTierKey)}
                                 data-testid={`button-select-${key}`}
                               >
-                                <span className="text-lg mb-1">{tier.icon}</span>
+                                <img 
+                                  src={tierBadges[key as BuilderTierKey]} 
+                                  alt={tier.name}
+                                  className="w-12 h-12 mb-2"
+                                />
                                 <span className="text-xs font-semibold mb-1">{tier.name.split(' ')[0]}</span>
                                 <span className="text-xs opacity-90">{formatCurrency(tier.annualAmount)}/yr</span>
                               </Button>
