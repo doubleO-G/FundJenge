@@ -2,7 +2,7 @@ import { Link } from "wouter";
 import { Facebook, Twitter, Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import logoImage from "@assets/JK-Logo-Dark-1536x614_1761228357506.png";
+import logoImage from "@assets/JIF Logo_1761595745164.png";
 
 export function Footer() {
   const handleNewsletterSubmit = (e: React.FormEvent) => {
@@ -17,7 +17,7 @@ export function Footer() {
           {/* About Section */}
           <div>
             <div className="mb-4">
-              <img src={logoImage} alt="JENGE Kulture" className="h-10 w-auto" />
+              <img src={logoImage} alt="JENGE Impact Fund" className="h-12 w-auto" />
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
               Building a KES 1.2 billion endowment fund to support 500,000 Kenyan youth achieve sustainable income through solidarity-driven enterprises.

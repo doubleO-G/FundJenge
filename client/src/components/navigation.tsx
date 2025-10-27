@@ -4,7 +4,7 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { cn } from "@/lib/utils";
-import logoImage from "@assets/JK-Logo-Dark-1536x614_1761228357506.png";
+import logoImage from "@assets/JIF Logo_1761595745164.png";
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -41,9 +41,9 @@ export function Navigation() {
           <Link href="/" className="flex items-center">
             <img 
               src={logoImage} 
-              alt="JENGE Kulture" 
+              alt="JENGE Impact Fund" 
               className={cn(
-                "h-8 w-auto transition-opacity",
+                "h-10 w-auto transition-opacity",
                 isScrolled ? "opacity-100" : "opacity-90"
               )}
             />
