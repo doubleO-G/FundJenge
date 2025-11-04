@@ -52,20 +52,19 @@ export function ContactForm() {
 
   const mutation = useMutation({
     mutationFn: async (data: FormData) => {
-      const response = await fetch("https://formspree.io/f/xdkovyej", {
+      return apiRequest("/api/inquiries", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          name: `${data.firstName} ${data.lastName}`,
+          firstName: data.firstName,
+          lastName: data.lastName,
           email: data.email,
-          inquiry_type: data.inquiryType,
+          inquiryType: data.inquiryType,
           message: data.message,
         }),
       });
-      if (!response.ok) throw new Error("Failed to submit inquiry");
-      return response.json();
     },
     onSuccess: () => {
       setIsSubmitted(true);
