@@ -111,19 +111,16 @@ export default function Home() {
 
   const impactStories = [
     {
-      title: "Nairobi Creative Collective: 50 Artists Find Sustainable Income",
-      excerpt: "Through solidarity-driven support, this collective of young artists in Nairobi secured workshop space, equipment, and market access, leading to sustainable livelihoods for all members.",
-      imageUrl: freelancersImg,
-    },
-    {
-      title: "Youth Cooperative Transforms Kisumu's Fashion Scene",
-      excerpt: "Twenty young fashion designers pooled resources to create a shared production facility, reducing costs and increasing market reach. They now export to three countries.",
+      title: "Exploring a Solidarity-Driven Impact Model for Kenya's Creative Economy",
+      excerpt: "Are you a creator, creative industry practitioner, or creative entrepreneur? Can you survive and thrive in the ever fast-evolving global and local social, economic, and technological landscapes? We're beginning a 6-month research project to explore answers.",
       imageUrl: youthWorkspace1,
+      link: "https://medium.com/jengestories/exploring-a-solidarity-driven-impact-model-for-kenyas-creative-economy-baf5afaa76ff",
     },
     {
-      title: "Digital Creators Hub Supports 100+ Young Professionals",
-      excerpt: "A solidarity enterprise in Mombasa provides shared resources, training, and collaborative opportunities for young digital creators, videographers, and content producers.",
-      imageUrl: youthWorkspace2,
+      title: "Pause, Re-Think, Reset: Our New Impact Model for Creators",
+      excerpt: "The date is May 21, 2021. At approximately 10:30am, we officially received our registration certificate from the Registrar of Companies. And just like that, JENGE Kulture was officially born. Here's our journey of learning and our new focus on solidarity.",
+      imageUrl: creativePractitionersImg,
+      link: "https://medium.com/jengestories/pause-re-think-reset-our-new-impact-model-for-creators-0ddadad59237",
     },
   ];
 

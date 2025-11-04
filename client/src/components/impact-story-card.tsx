@@ -1,14 +1,21 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ExternalLink } from "lucide-react";
 
 interface ImpactStoryCardProps {
   title: string;
   excerpt: string;
   imageUrl: string;
+  link?: string;
 }
 
-export function ImpactStoryCard({ title, excerpt, imageUrl }: ImpactStoryCardProps) {
+export function ImpactStoryCard({ title, excerpt, imageUrl, link }: ImpactStoryCardProps) {
+  const handleReadMore = () => {
+    if (link) {
+      window.open(link, '_blank', 'noopener,noreferrer');
+    }
+  };
+
   return (
     <Card className="overflow-hidden hover-elevate transition-all duration-300 group">
       <div className="relative h-56 overflow-hidden">
@@ -29,10 +36,22 @@ export function ImpactStoryCard({ title, excerpt, imageUrl }: ImpactStoryCardPro
           {excerpt}
         </CardDescription>
 
-        <Button variant="ghost" className="group/btn p-0 h-auto" data-testid={`button-read-story-${title.toLowerCase().replace(/\s+/g, '-')}`}>
-          <span className="text-sm font-medium text-primary">Read More</span>
-          <ArrowRight className="ml-1 h-4 w-4 text-primary transition-transform group-hover/btn:translate-x-1" />
-        </Button>
+        {link ? (
+          <Button 
+            variant="ghost" 
+            className="group/btn p-0 h-auto" 
+            onClick={handleReadMore}
+            data-testid={`button-read-story-${title.toLowerCase().replace(/\s+/g, '-')}`}
+          >
+            <span className="text-sm font-medium text-primary">Read More on Medium</span>
+            <ExternalLink className="ml-1 h-4 w-4 text-primary transition-transform group-hover/btn:translate-x-1" />
+          </Button>
+        ) : (
+          <Button variant="ghost" className="group/btn p-0 h-auto" data-testid={`button-read-story-${title.toLowerCase().replace(/\s+/g, '-')}`}>
+            <span className="text-sm font-medium text-primary">Read More</span>
+            <ArrowRight className="ml-1 h-4 w-4 text-primary transition-transform group-hover/btn:translate-x-1" />
+          </Button>
+        )}
       </CardContent>
     </Card>
   );
