@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { Facebook, Twitter, Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
+import { Facebook, Twitter, Instagram, Linkedin, Mail, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import logoImage from "@assets/JIF Logo_1761595745164.png";
@@ -73,11 +73,9 @@ export function Footer() {
               </li>
               <li className="flex items-start space-x-2">
                 <Mail className="h-4 w-4 text-muted-foreground mt-0.5" />
-                <span className="text-sm text-muted-foreground">info@jengekulture.org</span>
-              </li>
-              <li className="flex items-start space-x-2">
-                <Phone className="h-4 w-4 text-muted-foreground mt-0.5" />
-                <span className="text-sm text-muted-foreground">+254 XXX XXX XXX</span>
+                <a href="mailto:fund@jengekulture.org" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  fund@jengekulture.org
+                </a>
               </li>
             </ul>
           </div>

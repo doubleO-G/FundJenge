@@ -194,4 +194,4 @@ const response = await fetch("https://formspree.io/f/YOUR_FORM_ID", {
 
 For issues or questions:
 - GitHub Issues: [Your Repo URL]
-- Email: info@jengeimpact.org
+- Email: fund@jengekulture.org
