@@ -9,12 +9,7 @@ interface CampaignStats {
 
 export function useCampaignStats() {
   return useQuery<CampaignStats>({
-    queryKey: ['campaign-stats'],
-    queryFn: async () => {
-      const response = await fetch('/campaign-stats.json');
-      if (!response.ok) throw new Error('Failed to fetch campaign stats');
-      return response.json();
-    },
-    refetchInterval: 60000, // Refetch every minute
+    queryKey: ['/api/campaign/stats'],
+    refetchInterval: 10000, // Refetch every 10 seconds to show real-time progress
   });
 }

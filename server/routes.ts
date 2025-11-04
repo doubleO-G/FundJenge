@@ -152,16 +152,18 @@ export async function registerRoutes(app: Express): Promise<Server> {
     try {
       const stats = await storage.getDonationStats();
       
-      // Add campaign goal and deadline
+      // Campaign data based on ACTUAL payments received through Paystack
+      // This updates in real-time as new successful payments come in
       const campaignData = {
-        pledged: stats.pledged + 1520000, // Add initial pledged amount
-        goal: 20000000, // Milestone 1 goal
-        builders: stats.builders + 25, // Add initial builders
+        pledged: stats.pledged, // Only count actual successful payments received
+        goal: 20000000, // Milestone 1 goal (KES 20 million)
+        builders: stats.builders, // Count unique builders from successful payments
         deadline: new Date('2027-12-31').toISOString(),
       };
 
       res.json(campaignData);
     } catch (error: any) {
+      console.error('Error fetching campaign stats:', error);
       res.status(500).json({ message: 'Error fetching campaign stats' });
     }
   });
