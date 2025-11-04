@@ -2,6 +2,7 @@ import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertDonationSchema, insertBuilderPledgeSchema, insertInquirySchema, builderTiers } from "@shared/schema";
+import Parser from 'rss-parser';
 
 const PAYSTACK_SECRET_KEY = process.env.PAYSTACK_SECRET_KEY || '';
 const PAYSTACK_BASE_URL = 'https://api.paystack.co';
@@ -213,6 +214,55 @@ export async function registerRoutes(app: Express): Promise<Server> {
       res.json(stories);
     } catch (error: any) {
       res.status(500).json({ message: 'Error fetching stories' });
+    }
+  });
+
+  // Get latest Medium stories
+  app.get("/api/medium-stories", async (_req, res) => {
+    try {
+      const parser = new Parser({
+        customFields: {
+          item: ['content:encoded', 'description']
+        }
+      });
+      const feed = await parser.parseURL('https://medium.com/feed/jengestories');
+      
+      // Helper function to extract text from HTML
+      const extractText = (html: string): string => {
+        if (!html) return '';
+        // Remove HTML tags and decode entities
+        const text = html
+          .replace(/<[^>]*>/g, ' ')
+          .replace(/&nbsp;/g, ' ')
+          .replace(/&amp;/g, '&')
+          .replace(/&lt;/g, '<')
+          .replace(/&gt;/g, '>')
+          .replace(/&quot;/g, '"')
+          .replace(/\s+/g, ' ')
+          .trim();
+        return text.substring(0, 250) + (text.length > 250 ? '...' : '');
+      };
+      
+      // Get latest 3 stories
+      const latestStories = feed.items.slice(0, 3).map(item => {
+        const content = (item as any)['content:encoded'] || item.content || item.description || '';
+        return {
+          title: item.title || '',
+          excerpt: extractText(content),
+          link: item.link || '',
+          pubDate: item.pubDate || '',
+          thumbnail: content.match(/<img[^>]+src="([^">]+)"/)?.[1] || '',
+        };
+      });
+
+      res.json({ success: true, stories: latestStories });
+    } catch (error: any) {
+      console.error('Error fetching Medium stories:', error.message);
+      res.status(500).json({ 
+        success: false, 
+        message: 'Error fetching Medium stories',
+        error: error.message 
+      });
     }
   });
 

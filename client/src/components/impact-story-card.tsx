@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ExternalLink } from "lucide-react";
@@ -7,9 +8,20 @@ interface ImpactStoryCardProps {
   excerpt: string;
   imageUrl: string;
   link?: string;
+  fallbackImage?: string;
 }
 
-export function ImpactStoryCard({ title, excerpt, imageUrl, link }: ImpactStoryCardProps) {
+export function ImpactStoryCard({ title, excerpt, imageUrl, link, fallbackImage }: ImpactStoryCardProps) {
+  const [imgSrc, setImgSrc] = useState(imageUrl);
+  const [imgError, setImgError] = useState(false);
+
+  const handleImageError = () => {
+    if (!imgError && fallbackImage) {
+      setImgError(true);
+      setImgSrc(fallbackImage);
+    }
+  };
+
   const handleReadMore = () => {
     if (link) {
       window.open(link, '_blank', 'noopener,noreferrer');
@@ -20,9 +32,10 @@ export function ImpactStoryCard({ title, excerpt, imageUrl, link }: ImpactStoryC
     <Card className="overflow-hidden hover-elevate transition-all duration-300 group">
       <div className="relative h-56 overflow-hidden">
         <img
-          src={imageUrl}
+          src={imgSrc}
           alt={title}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+          onError={handleImageError}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
       </div>

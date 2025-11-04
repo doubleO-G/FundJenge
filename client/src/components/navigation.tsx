@@ -31,8 +31,8 @@ export function Navigation() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         isScrolled
-          ? "bg-[hsl(145,35%,88%)]/95 dark:bg-[hsl(145,40%,25%)]/95 backdrop-blur-md border-b shadow-sm"
-          : "bg-[hsl(145,35%,88%)] dark:bg-[hsl(145,40%,25%)]"
+          ? "bg-white/95 dark:bg-gray-900/95 backdrop-blur-md border-b shadow-sm"
+          : "bg-white dark:bg-gray-900"
       )}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -93,7 +93,7 @@ export function Navigation() {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden py-4 border-t bg-[hsl(145,35%,85%)] dark:bg-[hsl(145,40%,20%)]">
+          <div className="md:hidden py-4 border-t bg-white dark:bg-gray-800">
             <div className="flex flex-col space-y-3">
               {navLinks.map((link) => (
                 <Link 

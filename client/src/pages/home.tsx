@@ -11,6 +11,7 @@ import { ContactForm } from "@/components/contact-form";
 import { ArrowRight, Target, Users, Sparkles, TrendingUp } from "lucide-react";
 import { useCampaignStats } from "@/hooks/use-campaign-stats";
 import { useToast } from "@/hooks/use-toast";
+import { useQuery } from "@tanstack/react-query";
 import creativePractitionersImg from "@assets/jenge-creative-practitioners.png";
 import freelancersImg from "@assets/jenge-freelancers.png";
 import collectiveImg from "@assets/jenge-collective.png";
@@ -24,6 +25,12 @@ export default function Home() {
   const [location] = useLocation();
   const { toast } = useToast();
   const { data: campaignStats } = useCampaignStats();
+  
+  // Fetch latest Medium stories
+  const { data: mediumStoriesData } = useQuery({
+    queryKey: ['/api/medium-stories'],
+    refetchInterval: 300000, // Refetch every 5 minutes
+  });
 
   // Handle payment success/failure notifications
   useEffect(() => {
@@ -109,7 +116,15 @@ export default function Home() {
     },
   ];
 
-  const impactStories = [
+  // Use fetched Medium stories or fallback to default images
+  const defaultImages = [youthWorkspace1, creativePractitionersImg, collectiveImg];
+  const impactStories = mediumStoriesData?.stories?.map((story: any, index: number) => ({
+    title: story.title,
+    excerpt: story.excerpt,
+    imageUrl: story.thumbnail || defaultImages[index % defaultImages.length],
+    fallbackImage: defaultImages[index % defaultImages.length],
+    link: story.link,
+  })) || [
     {
       title: "Exploring a Solidarity-Driven Impact Model for Kenya's Creative Economy",
       excerpt: "Are you a creator, creative industry practitioner, or creative entrepreneur? Can you survive and thrive in the ever fast-evolving global and local social, economic, and technological landscapes? We're beginning a 6-month research project to explore answers.",
